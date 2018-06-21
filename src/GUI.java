@@ -1,5 +1,8 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class GUI {
     Images images = new Images();
@@ -20,6 +23,17 @@ public class GUI {
     public static JButton btn3;
     public static JButton btn4;
 
+    public static BufferedImage CharakterFaultier;
+
+    public void loadImages() {
+
+        try {
+            CharakterFaultier = ImageIO.read(getClass().getResource("/images/CharakterFaultier.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public static void initialize(){
         frame = new JFrame();
@@ -34,6 +48,7 @@ public class GUI {
         layeredPane.add(hintergrund);
         layeredPane.setLayer(hintergrund,0);
         hintergrund.setOpaque(true);
+        hintergrund.setBackground(Color.ORANGE);
         //hintergrund.setIcon(new ImageIcon(Images.hintergrundWohnzimmer));
         hintergrund.setBounds(0,0,1000,600);
 
@@ -43,7 +58,8 @@ public class GUI {
         layeredPane.setLayer(character,1);
         character.setVisible(true);
         character.setBounds(1,1,250,600);
-        character.setIcon(new ImageIcon(Images.CharakterFaultier));
+        //character.setBackground(Color.BLUE);
+       // character.setIcon(new ImageIcon(Images.CharakterFaultier));
         character.setOpaque(true);
 
 

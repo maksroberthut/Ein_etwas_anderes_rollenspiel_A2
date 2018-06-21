@@ -17,7 +17,7 @@ public class Images {
     public static BufferedImage TuerOma;
     public static BufferedImage ZettelToDo;
 
-    public void loadImages(){
+    public void loadingImages(){
 
         //TODO Die BufferedImages werden nicht gefunden
         try {
@@ -27,7 +27,7 @@ public class Images {
             }
 
             try {
-                CharakterHeld = ImageIO.read(getClass().getResource("/images/CharakterHeld.png"));
+                CharakterHeld = ImageIO.read(getClass().getResource("/CharakterHeld.png"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
