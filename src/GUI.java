@@ -87,7 +87,6 @@ public class GUI implements ActionListener {
         btn2.setText(b);
         btn3.setText(c);
         btn4.setText(d);
-
     }
 
 

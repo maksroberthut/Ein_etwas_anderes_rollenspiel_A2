@@ -20,6 +20,7 @@ public class Gamemanager {
         switch (gamestate){
             //Der Intro Text wird angezeigt
             case 1 : gamestate++;
+            //ändert den Text der Buttons nach einem Gamestate
             gui.changeButtonLable("1","2","3","4");
             return Text.Intro;
 
