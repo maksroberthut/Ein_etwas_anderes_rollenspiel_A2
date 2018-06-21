@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public class GUI implements ActionListener {
 
+    private Gamemanager gamemanager;
 
     public static JFrame frame;
     public static JPanel panel;
@@ -22,7 +23,7 @@ public class GUI implements ActionListener {
     public JButton btn4;
 
 
-    public void initialize() {
+    public void initialize(Gamemanager p) {
         frame = new JFrame();
         frame.setVisible(true);
         frame.setBounds(50, 50, 1000, 600);
@@ -58,20 +59,24 @@ public class GUI implements ActionListener {
         btn1.setBounds(30, 495, 200, 50);
 
         btn2 = new JButton("Antwort 2");
+        btn2.addActionListener(this);
         panel.add(btn2);
         btn2.setVisible(true);
         btn2.setBounds(270, 495, 200, 50);
 
         btn3 = new JButton("Antwort 3");
+        btn3.addActionListener(this);
         panel.add(btn3);
         btn3.setVisible(true);
         btn3.setBounds(510, 495, 200, 50);
 
         btn4 = new JButton("Antwort 4");
+        btn3.addActionListener(this);
         panel.add(btn4);
         btn4.setVisible(true);
         btn4.setBounds(750, 495, 200, 50);
 
+        gamemanager = p;
 
 
     }
@@ -82,8 +87,15 @@ public class GUI implements ActionListener {
 
         //Buttonevent um den Text (String) im Textfeld zu zeigen
         if (e.getSource() == btn1) {
-            textfeld.setText("testtext");
+            textfeld.setText(gamemanager.userInput(1));
+        }else if(e.getSource()==btn2){
+            textfeld.setText(gamemanager.userInput(1));
+        }else if(e.getSource()==btn3){
+            textfeld.setText(gamemanager.userInput(1));
+        }else if(e.getSource()==btn4){
+            textfeld.setText(gamemanager.userInput(1));
         }
+
         if (e.getSource() == btn2) {
             textfeld.setText("Something else");
 
