@@ -8,14 +8,14 @@ public class GUI implements ActionListener {
 
     private Gamemanager gamemanager;
 
-    public static JFrame frame;
-    public static JPanel panel;
+    public  JFrame frame;
+    public  JPanel panel;
 
-    public static JLabel hintergrund;
+    public  JLabel hintergrund;
 
-    public static JLabel character;
+    public  JLabel character;
 
-    public static JTextField textfeld;
+    public  JTextField textfeld;
 
     public JButton btn1;
     public JButton btn2;
@@ -38,6 +38,7 @@ public class GUI implements ActionListener {
         character.setBounds(1, 1, 250, 290);
         character.setBackground(Color.BLUE);
         character.setOpaque(true);
+
 
         hintergrund = new JLabel("hintergrund");
         panel.add(hintergrund);
@@ -80,6 +81,15 @@ public class GUI implements ActionListener {
 
 
     }
+    //Änderung des Textes auf dem Buttons
+    public void changeButtonLable(String a,String b,String c, String d){
+        btn1.setText(a);
+        btn2.setText(b);
+        btn3.setText(c);
+        btn4.setText(d);
+
+    }
+
 
 
     @Override
@@ -89,17 +99,16 @@ public class GUI implements ActionListener {
         if (e.getSource() == btn1) {
             textfeld.setText(gamemanager.userInput(1));
         }else if(e.getSource()==btn2){
-            textfeld.setText(gamemanager.userInput(1));
+            textfeld.setText(gamemanager.userInput(2));
         }else if(e.getSource()==btn3){
-            textfeld.setText(gamemanager.userInput(1));
+            textfeld.setText(gamemanager.userInput(3));
         }else if(e.getSource()==btn4){
-            textfeld.setText(gamemanager.userInput(1));
+            textfeld.setText(gamemanager.userInput(4));
         }
 
-        if (e.getSource() == btn2) {
-            textfeld.setText("Something else");
+
 
         }
 
     }
-}
+
