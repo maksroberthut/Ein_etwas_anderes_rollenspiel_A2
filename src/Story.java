@@ -11,11 +11,11 @@ public class Story {
     }
 
 
-    Inhalt inhalt = new Inhalt();
+
 
     public void storyVerlauf(){
 
-        inhalt.intro();
+
 
     }
 

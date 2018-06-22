@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 public class menuGUI {
 
     static GUI gui = new GUI();
+    //static Story story = new Story();
+
 
     public static JFrame menuframe;
     public static JPanel panel;
@@ -63,9 +65,10 @@ public class menuGUI {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource()==btnStart){
-                gui.initialize();
+                gui.initialize(null);
                 menuframe.setVisible(false);
                 menuframe.dispose();
+                //story.storyVerlauf();
             }
             else if(e.getSource()==btnExit){
                 menuframe.setVisible(false);

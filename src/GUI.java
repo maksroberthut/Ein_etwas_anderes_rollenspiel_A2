@@ -9,7 +9,9 @@ public class GUI implements ActionListener {
     private Gamemanager gamemanager;
 
     public  JFrame frame;
-    public  JPanel panel;
+
+
+    public static JLayeredPane layeredPane;
 
     public  JLabel hintergrund;
 
@@ -28,52 +30,59 @@ public class GUI implements ActionListener {
         frame.setVisible(true);
         frame.setBounds(50, 50, 1000, 600);
 
-        panel = new JPanel();
-        panel.setVisible(true);
-        frame.add(panel);
+        layeredPane = new JLayeredPane();
+        layeredPane.setVisible(true);
+        frame.add(layeredPane);
+
+        hintergrund = new JLabel("hintergrund");
+        layeredPane.add(hintergrund);
+        layeredPane.setLayer(hintergrund, 0);
+        hintergrund.setOpaque(true);
+        //nur zu Testzwecken eingefärbt
+        hintergrund.setBackground(Color.ORANGE);
+        hintergrund.setBounds(270, 1, 1000, 600);
 
         character = new JLabel("charakter");
         character.setVisible(true);
-        panel.add(character);
-        character.setBounds(1, 1, 250, 290);
+        layeredPane.add(character);
+        layeredPane.setLayer(character, 1);
+        character.setBounds(1, 1, 300, 600);
         character.setBackground(Color.BLUE);
         character.setOpaque(true);
 
-
-        hintergrund = new JLabel("hintergrund");
-        panel.add(hintergrund);
-        hintergrund.setOpaque(true);
-        hintergrund.setBackground(Color.ORANGE);
-        hintergrund.setBounds(270, 1, 700, 290);
-
         textfeld = new JTextField();
         textfeld.setVisible(true);
-        panel.add(textfeld);
+        layeredPane.add(textfeld);
+        layeredPane.setLayer(textfeld,2);
         textfeld.setBounds(0, 300, 1000, 180);
         textfeld.setEditable(false);
 
 
         btn1 = new JButton("Antwort 1");
         btn1.addActionListener(this);
-        panel.add(btn1);
+        layeredPane.add(btn1);
+        layeredPane.setLayer(btn1,2);
         btn1.setVisible(true);
         btn1.setBounds(30, 495, 200, 50);
 
         btn2 = new JButton("Antwort 2");
         btn2.addActionListener(this);
-        panel.add(btn2);
+        layeredPane.add(btn2);
+        layeredPane.setLayer(btn2,2);
         btn2.setVisible(true);
         btn2.setBounds(270, 495, 200, 50);
 
         btn3 = new JButton("Antwort 3");
         btn3.addActionListener(this);
-        panel.add(btn3);
+        layeredPane.add(btn3);
+        layeredPane.setLayer(btn3,2);
         btn3.setVisible(true);
         btn3.setBounds(510, 495, 200, 50);
 
         btn4 = new JButton("Antwort 4");
         btn3.addActionListener(this);
-        panel.add(btn4);
+        layeredPane.add(btn4);
+        layeredPane.setLayer(btn4,2);
         btn4.setVisible(true);
         btn4.setBounds(750, 495, 200, 50);
 
