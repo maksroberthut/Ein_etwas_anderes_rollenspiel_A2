@@ -21,10 +21,13 @@ public class Gamemanager {
             //Der Intro Text wird angezeigt
             case 1 : gamestate++;
             //ändert den Text der Buttons nach einem Gamestate
-            gui.changeButtonLable("1","2","3","4");
+            gui.changeButtonLable("weiter","2","3","4");
             return Text.Intro;
 
             case 2 : gamestate++;
+            gui.changeButtonLable("weiter","weiter","wieter","weiter");
+            return Text.Intro2;
+
 
 
         }

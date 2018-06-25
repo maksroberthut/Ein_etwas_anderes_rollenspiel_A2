@@ -17,7 +17,9 @@ public class GUI implements ActionListener {
 
     public  JLabel character;
 
-    public  JTextField textfeld;
+    public  JTextArea textfeld;
+
+
 
     public JButton btn1;
     public JButton btn2;
@@ -50,12 +52,19 @@ public class GUI implements ActionListener {
         character.setBackground(Color.BLUE);
         character.setOpaque(true);
 
-        textfeld = new JTextField();
+
+
+        textfeld = new JTextArea(10,60);
         textfeld.setVisible(true);
+        textfeld.setFont(new Font("Verdana",Font.PLAIN,13));
         layeredPane.add(textfeld);
         layeredPane.setLayer(textfeld,2);
-        textfeld.setBounds(0, 300, 1000, 180);
+        textfeld.setBounds(5, 300, 990, 180);
         textfeld.setEditable(false);
+        textfeld.setLineWrap(true);
+        textfeld.setWrapStyleWord(true);
+
+
 
 
         btn1 = new JButton("Antwort 1");
@@ -86,6 +95,8 @@ public class GUI implements ActionListener {
         btn4.setVisible(true);
         btn4.setBounds(750, 495, 200, 50);
 
+
+
         gamemanager = p;
 
 
@@ -99,8 +110,7 @@ public class GUI implements ActionListener {
     }
 
 
-
-    @Override
+    
     public void actionPerformed(ActionEvent e) {
 
         //Buttonevent um den Text (String) im Textfeld zu zeigen
