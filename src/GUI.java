@@ -109,24 +109,69 @@ public class GUI implements ActionListener {
         btn4.setText(d);
     }
 
+    public void changeButtonVisibility(boolean a,boolean b,boolean c,boolean d) {
+        btn1.setVisible(a);
+        btn2.setVisible(b);
+        btn3.setVisible(c);
+        btn4.setVisible(d);
 
-    
+    }
+
+
     public void actionPerformed(ActionEvent e) {
 
         //Buttonevent um den Text (String) im Textfeld zu zeigen
         if (e.getSource() == btn1) {
             textfeld.setText(gamemanager.userInput(1));
+
+
+            if(gamemanager.getGamestate() == 8){
+
+                textfeld.setText(Text.Chap1_Auswahl1);
+                gamemanager.setGamestate (8);
+
+            }
+
+
         }else if(e.getSource()==btn2){
-            textfeld.setText(gamemanager.userInput(2));
+
+            if(gamemanager.getGamestate() == 7){
+
+                textfeld.setText(Text.Chap1_Auswahl2);
+                gamemanager.setGamestate (8);
+
+            }
+
         }else if(e.getSource()==btn3){
-            textfeld.setText(gamemanager.userInput(3));
+
+            if(gamemanager.getGamestate() == 7){
+
+                textfeld.setText(Text.Chap1_Auswahl3);
+                gamemanager.setGamestate (8);
+
+            }
         }else if(e.getSource()==btn4){
-            textfeld.setText(gamemanager.userInput(4));
+
+
+            if(gamemanager.getGamestate() == 7){
+
+                textfeld.setText(Text.Chap1_Auswahl4);
+                gamemanager.setGamestate (8);
+
+            }
+
         }
 
 
 
-        }
+
 
     }
 
+
+
+}
+
+
+
+    
