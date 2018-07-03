@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class HighScoreManager {
+public class HighScoreManager{
     // Wir benutzen eine ArryList vom Typen score die in dieeser Klasse arbeiten
     private ArrayList<Highscores> highscores;
 
