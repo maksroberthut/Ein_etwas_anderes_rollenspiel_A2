@@ -2,7 +2,8 @@ package HighscoreSystem;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
 
 public class HighScoreManager{
     // Wir benutzen eine ArryList vom Typen score die in dieeser Klasse arbeiten
@@ -22,7 +23,7 @@ public class HighScoreManager{
 
     public ArrayList<Highscores> getHighscores(){
         loadScoreFile();
-        //quicksort();
+        ;
         return highscores;
     }
 
@@ -101,29 +102,17 @@ public class HighScoreManager{
           }
           return highScoreString;
 
-
-
-
     }
-    public ArrayList<Highscores> quicksort(ArrayList <Highscores> list){
-
-        // Wenn sie schon geordnet sind
-        if (highscores.size()<=1)
-            return highscores;
-
-        ArrayList<Highscores> sorted = new ArrayList<Highscores>();
-        ArrayList<Highscores> lesser = new ArrayList<Highscores>();
-        ArrayList<Highscores> greater = new ArrayList<Highscores>();
-        Highscores pivot = list.get(list.size()-1);//Nehme den letzten Highscore als pivot
-
-        for (int i =0;i< list.size()-1;i++){
-
-
-        }
-        return sorted;
 
 
 
-    }
+
+
+
+
+
+
+
+
 
 }
