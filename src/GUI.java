@@ -23,11 +23,14 @@ public class GUI implements ActionListener {
 
 
 
+
     public JButton btn1;
     public JButton btn2;
     public JButton btn3;
     public JButton btn4;
     public JButton btnWeiter;
+
+
 
     private int tuerEntscheidung = 0;
 
@@ -44,7 +47,7 @@ public class GUI implements ActionListener {
         frame = new JFrame();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setBounds(50, 50, 1000, 600);
+        frame.setBounds(50, 50, 1000, 620);
 
         layeredPane = new JLayeredPane();
         layeredPane.setVisible(true);
@@ -59,14 +62,6 @@ public class GUI implements ActionListener {
         hintergrund.setBounds(0, 0, 1000, 600);
         hintergrund.setIcon(new ImageIcon(images.hintergrundStartbild));
 
-        character = new JLabel("charakter");
-        character.setVisible(true);
-        layeredPane.add(character);
-        layeredPane.setLayer(character, 1);
-        character.setBounds(1, 1, 300, 600);
-        character.setIcon(new ImageIcon(images.CharakterFaultier));
-        character.setOpaque(true);
-
 
 
         textfeld = new JTextArea(10,60);
@@ -74,7 +69,7 @@ public class GUI implements ActionListener {
         textfeld.setFont(new Font("Verdana",Font.PLAIN,13));
         layeredPane.add(textfeld);
         layeredPane.setLayer(textfeld,2);
-        textfeld.setBounds(5, 300, 990, 180);
+        textfeld.setBounds(5, 300, 975, 180);
         textfeld.setEditable(false);
         textfeld.setLineWrap(true);
         textfeld.setWrapStyleWord(true);
@@ -116,6 +111,8 @@ public class GUI implements ActionListener {
         btn4.setBounds(750, 495, 200, 50);
 
         gamemanager = p;
+
+         gamemanager.setPlayername(JOptionPane.showInputDialog(frame,"Spielername","Wie heißt du?",JOptionPane.QUESTION_MESSAGE));
 
 
     }
@@ -203,7 +200,6 @@ public class GUI implements ActionListener {
             if(gamemanager.getGamestate() == 2){
 
                 textfeld.setText(Text.CharakterFaultier);
-                character.setIcon(new ImageIcon(images.CharakterFaultier));
                 btnWeiter.setText("Weiter");
                 changeButtonVisibility(false,false,false,false,true);
 

@@ -10,6 +10,7 @@ import static HighscoreSystem.Quicksort.highscorequicksort;
 /**
  * Diese Klasse ist die MainHub des HighScoreSystems, wo alles zusammengeführt wird
  * Zudem ist es noch ein toolkit um mit den Highscores umzugehen wie z.b laden,sortieren und in Strings umwandeln
+ * Diese Klasse wurde von Maksymilian Robert Hutyra verfasst
  */
 
 public class HighScoreManager{
@@ -109,6 +110,7 @@ public class HighScoreManager{
           if (s>max){
               s = max;
           }
+          //Score wird in einen String konvertiert der nacheinander angezeigt wird
           while (i<s){
               highScoreString += (i+1)+".\t"+scores.get(i).getName()+"\t\t"+scores.get(i).getScore()+"\n";
               i++;

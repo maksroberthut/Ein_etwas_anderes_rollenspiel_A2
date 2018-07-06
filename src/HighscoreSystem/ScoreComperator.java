@@ -3,6 +3,7 @@ package HighscoreSystem;
 import java.util.Comparator;
 
 /**Diese Klasse sagt Java wie sie zwei Objekte vom Typen Score vergeleichen soll
+ * Diese Klasse wurde von Maksymilian Robert Hutyra
  *
  */
 

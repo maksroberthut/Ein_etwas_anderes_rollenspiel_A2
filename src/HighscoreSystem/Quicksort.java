@@ -3,6 +3,12 @@ package HighscoreSystem;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+/**
+ * Inn dieser Klasse findet man den Haupalgorithmus unseres spiels
+ * Eine Quicksort, der die highscores aufsteigend sortiert
+ * Diese Kalssse wurde von Maksymilian Robert Hutyra erstellt
+ */
+
 public class Quicksort {
 
     private static void quicksort(ArrayList<Highscores> list, int leftIndex, int righIndex, Comparator<Highscores> comparator){

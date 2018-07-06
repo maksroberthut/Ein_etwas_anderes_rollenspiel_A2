@@ -12,6 +12,7 @@ public class Main extends JFrame {
         HighScoreManager hm = new HighScoreManager();
         gui.initialize(gamemanager);
 
+
         hm.addHighscores("Louisa",12);
 
 

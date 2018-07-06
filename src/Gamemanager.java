@@ -15,6 +15,7 @@ public class Gamemanager {
     private GUI gui;
     HighScoreManager highScoreManager = new HighScoreManager();
     Images images = new Images();
+    String name;
 
     public int getScore() {
         return score;
@@ -146,6 +147,11 @@ public class Gamemanager {
         }
 
         return "fehler";
+    }
+
+    public void setPlayername(String name){
+        this.name = name;
+
     }
     //Den Tasten einen Wert (Mutpunkte) zuweisen(jeweils die Arrays und auf score addiert
     public void scoremulti(int Input){

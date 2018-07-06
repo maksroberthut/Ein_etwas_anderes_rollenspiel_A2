@@ -2,6 +2,11 @@ package HighscoreSystem;
 
 import java.io.Serializable;
 
+/**
+ * Diese Klasse richtet ein einfaches Highscoreobjekt ein
+ * Diese Klasse wurde von Maksymilian Hutyra verfasst
+ */
+
 public class Highscores implements Serializable {
 
     private int score;
