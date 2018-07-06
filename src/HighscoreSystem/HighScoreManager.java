@@ -7,6 +7,11 @@ import java.util.List;
 
 import static HighscoreSystem.Quicksort.highscorequicksort;
 
+/**
+ * Diese Klasse ist die MainHub des HighScoreSystems, wo alles zusammengeführt wird
+ * Zudem ist es noch ein toolkit um mit den Highscores umzugehen wie z.b laden,sortieren und in Strings umwandeln
+ */
+
 public class HighScoreManager{
     // Wir benutzen eine ArryList vom Typen score die in dieeser Klasse arbeiten
     private ArrayList<Highscores> highscores;
@@ -21,19 +26,23 @@ public class HighScoreManager{
 
    //Konstruktor der Klasse
     public HighScoreManager(){
+        //Inizialisierung der ArrayList
         highscores = new ArrayList<Highscores>();
     }
 
+    // Diese Methode gibt die sortierte ArrayList zurück
     public ArrayList<Highscores> getHighscores(){
         loadScoreFile();
         highscorequicksort(highscores);
         return highscores;
     }
-
+    //Methode zum hinzufügen von Scores
     public void addHighscores(String name, int score){
         loadScoreFile();
         highscores.add(new Highscores(name,score));
         updateScoreFile();
+
+
     }
 
     //In dieser Methode läd die ArryList auf die HighScoreFile
@@ -52,6 +61,7 @@ public class HighScoreManager{
 
         }finally {
             try {
+                //Den Buffer leeren und schließen
                 if (outputStream != null){
                     outputStream.flush();
                     outputStream.close();
@@ -74,6 +84,7 @@ public class HighScoreManager{
 
         }finally {
             try {
+                //Den Buffer leeren und schließen
                 if(outputStream != null){
                     outputStream.flush();
                     outputStream.close();
@@ -86,7 +97,8 @@ public class HighScoreManager{
     //  Die Highscores aus der File in Strings convertieren um sie Später im Textfeld anzuzeeigen
     public String highScoreString(){
           String highScoreString = "";
-          int max = 12;
+         //Maximale Anzahl von Usern die Angezeigt werden können
+          int max = 10;
 
           ArrayList<Highscores> scores;
           scores = getHighscores();

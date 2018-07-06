@@ -2,14 +2,16 @@ package HighscoreSystem;
 
 import java.util.Comparator;
 
-//Diese Klasse wird nur zum vergleiche von zwei Score Objekten benutzt
+/**Diese Klasse sagt Java wie sie zwei Objekte vom Typen Score vergeleichen soll
+ *
+ */
 
 public class ScoreComperator implements Comparator <Highscores> {
 
-    public int compare (Highscores score1,Highscores score2){
+    public int compare (Highscores score1,Highscores score2) {
 
-        return score1.getScore()-score2.getScore();
-        }
+        return score1.getScore() - score2.getScore();
+    }
 
 
 

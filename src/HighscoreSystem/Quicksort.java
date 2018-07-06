@@ -31,6 +31,7 @@ public class Quicksort {
             //Teilen der Arraylist
         }while (i<j);
 
+        //Wenn ein positiver inteeger rauskommt wird die bedingung ausgeführt und der rechte index auch angepasst
         if (comparator.compare(list.get(i),pivot)>0){
 
             Highscores temp = list.get(i);
