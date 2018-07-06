@@ -56,7 +56,8 @@ public class GUI implements ActionListener {
         hintergrund.setOpaque(true);
         //nur zu Testzwecken eingefärbt
         hintergrund.setBackground(Color.ORANGE);
-        hintergrund.setBounds(270, 1, 1000, 600);
+        hintergrund.setBounds(0, 0, 1000, 600);
+        hintergrund.setIcon(new ImageIcon(images.hintergrundStartbild));
 
         character = new JLabel("charakter");
         character.setVisible(true);
@@ -113,8 +114,6 @@ public class GUI implements ActionListener {
         layeredPane.setLayer(btn4,2);
         btn4.setVisible(false);
         btn4.setBounds(750, 495, 200, 50);
-
-
 
         gamemanager = p;
 
@@ -223,7 +222,7 @@ public class GUI implements ActionListener {
             //Enstscheidung Zocken
             if(gamemanager.getGamestate() == 10){
 
-                //TODO Minispiel einrichten
+                new MinispielThread().start();
                 textfeld.setText(Text.Chap2_Auswahl2);
                 changeButtonVisibility(false,false,false,false,true);
 

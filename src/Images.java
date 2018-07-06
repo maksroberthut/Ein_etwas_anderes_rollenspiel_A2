@@ -49,7 +49,7 @@ public class Images {
             e.printStackTrace();
         }
         try {
-            hintergrundWohnzimmer = ImageIO.read(getClass().getResource("/resources/hintergrundWohnzimmer.jpg"));
+            hintergrundWohnzimmer = ImageIO.read(getClass().getResource("/resources/hintergrundWohnzimmer.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

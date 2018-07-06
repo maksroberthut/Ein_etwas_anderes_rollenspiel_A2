@@ -18,7 +18,7 @@ public class Text {
                      "Es ist das Monster mit sein Köpfen 'Wucher' und 'Preis', in seiner Klaue hält es die Prinzessin Calzone und ihre Schwester Margaritha.";
 
 
-     public static String Intro2 = "Der erbitterte Kampf gegen das Monster zieht sich über Stunden. Es wirkt als würrde er noch länger dauern, doch da passiert es:" +
+     public static String Intro2 = "Der erbitterte Kampf gegen das Monster zieht sich über Stunden. Es wirkt als würde er noch länger dauern, doch da passiert es:" +
              " Das Monster verliert seine Balance und rutscht auf einer ... Salamischeibe aus?\n" +
              "\n" +
              "Komisch, aber das ist deine Chance den Kampf zu beenden. DU holst zu einem mächtigen Schlag mit deinem Schwert aus. Als die Klinge auf das Monster zuschnellt" +
