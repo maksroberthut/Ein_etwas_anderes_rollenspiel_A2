@@ -8,12 +8,12 @@ public class Main extends JFrame {
 
         GUI gui = new GUI();
         menuGUI menuGUI = new menuGUI();
-        Gamemanager gamemanager = new Gamemanager(gui);
         HighScoreManager hm = new HighScoreManager();
+        Gamemanager gamemanager = new Gamemanager(gui,hm);
+
         gui.initialize(gamemanager);
 
 
-        hm.addHighscores("Louisa",12);
 
 
     }

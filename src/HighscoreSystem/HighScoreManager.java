@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static HighscoreSystem.Quicksort.highscorequicksort;
+import static HighscoreSystem.Quicksort.quicksort;
 
 /**
  * Diese Klasse ist die MainHub des HighScoreSystems, wo alles zusammengeführt wird
@@ -34,7 +34,7 @@ public class HighScoreManager{
     // Diese Methode gibt die sortierte ArrayList zurück
     public ArrayList<Highscores> getHighscores(){
         loadScoreFile();
-        highscorequicksort(highscores);
+        highscores = Quicksort.quicksort(highscores);
         return highscores;
     }
     //Methode zum hinzufügen von Scores

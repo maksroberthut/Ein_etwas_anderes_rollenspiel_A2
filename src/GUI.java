@@ -46,6 +46,7 @@ public class GUI implements ActionListener {
 
         frame = new JFrame();
         frame.setVisible(true);
+        frame.setTitle("Ein Etwas Anderews Rollenspiel");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(50, 50, 1000, 620);
 

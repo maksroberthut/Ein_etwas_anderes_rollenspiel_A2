@@ -3,6 +3,7 @@ import java.awt.*;
 import java.io.Serializable;
 import HighscoreSystem.Highscores;
 import HighscoreSystem.HighScoreManager;
+import HighscoreSystem.Highscores;
 
 import javax.swing.*;
 
@@ -13,7 +14,7 @@ public class Gamemanager {
     private int gamestate = 1;
     private int score = 0;
     private GUI gui;
-    HighScoreManager highScoreManager = new HighScoreManager();
+    HighScoreManager highScoreManager;
     Images images = new Images();
     String name;
 
@@ -23,8 +24,9 @@ public class Gamemanager {
 
 
     //Konstruktor
-    public Gamemanager(GUI gui) {
+    public Gamemanager(GUI gui,HighScoreManager highScoreManager) {
         this.gui = gui;
+        this.highScoreManager = highScoreManager;
 
 
     }
@@ -135,8 +137,9 @@ public class Gamemanager {
 
 
             case 17: gamestate++;
+                highScoreManager.addHighscores(name,score);
                 gui.btnWeiter.setText("Und Tschüss!");
-                return Text.Chap6_Ende;
+                return Text.Chap6_Ende +"\n\n"+ highScoreManager.highScoreString();
 
             case 18: gamestate++;
                 gui.frame.dispose();
@@ -156,11 +159,21 @@ public class Gamemanager {
     //Den Tasten einen Wert (Mutpunkte) zuweisen(jeweils die Arrays und auf score addiert
     public void scoremulti(int Input){
 
-        int[] state1 = {0,0,0,0,0,4,2,3,1};
+        int[] state1 = {1,4,2,3};
+        int[] state2 = {1,5};
+        int[] state3 = {1,4,3,2};
+        int[] state4 = {3,2,1,4};
 
         switch (gamestate){
 
-            case 1 : score += state1[Input]; break;
+            case 8 : score += state1[Input]; break;
+            case 10: score += state2[Input];break;
+            case 11: score += state3[Input];break;
+            case 15: score += state4[Input];break;
+
+
+
+
         }
     }
 

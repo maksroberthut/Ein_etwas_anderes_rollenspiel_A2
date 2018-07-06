@@ -25,4 +25,14 @@ public class Highscores implements Serializable {
         this.name = name;
 
     }
+
+    public int compareTo(Highscores score2){
+        if (getScore() < score2.getScore()){
+            return -1;
+        }else if (getScore() > score2.getScore()){
+            return +1;
+        }else {
+            return 0;
+        }
+    }
 }

@@ -11,50 +11,31 @@ import java.util.Comparator;
 
 public class Quicksort {
 
-    private static void quicksort(ArrayList<Highscores> list, int leftIndex, int righIndex, Comparator<Highscores> comparator){
+   public static ArrayList<Highscores> quicksort(ArrayList<Highscores> list){
 
-        //Bounce Check
-        if (leftIndex>=righIndex){
-            return;
-        }
-        //Definiere Marker und Pivot
-        int i = leftIndex;
-        int j = righIndex-1;
-        Highscores pivot = list.get(righIndex);
+       if (list.size()<=1)
+           return list;
+       ArrayList<Highscores> sorted = new ArrayList<Highscores>();
+       ArrayList<Highscores> lesser = new ArrayList<Highscores>();
+       ArrayList<Highscores> greater = new ArrayList<Highscores>();
+       Highscores pivot = list.get(list.size()-1);
 
-        do{
-            //Die Indexe aufeinander zulaufen lassen
-            while (i<righIndex&&comparator.compare(list.get(i),pivot)<=0){
-                i++;//
-            }while (i>leftIndex&&comparator.compare(list.get(i),pivot)>=0){
-                j--;
-            }if (i<j){
-                Highscores temp = list.get(i);
-                list.set(i,list.get(j));
-                list.set(j,temp);
-            }
+       for (int i = 0 ; i <list.size()-1;i++){
 
-            //Teilen der Arraylist
-        }while (i<j);
+           if ((list.get(i).compareTo(pivot)<0))
+               lesser.add(list.get(i));
+           else
+               greater.add(list.get(i));
+       }
+       lesser =quicksort(lesser);
+       greater = quicksort(greater);
 
-        //Wenn ein positiver inteeger rauskommt wird die bedingung ausgeführt und der rechte index auch angepasst
-        if (comparator.compare(list.get(i),pivot)>0){
+       lesser.add(pivot);
+       lesser.addAll(greater);
+       sorted = lesser;
 
-            Highscores temp = list.get(i);
-            list.set(i,list.get(righIndex));
-            list.set(righIndex,temp);
+       return sorted;
 
-        }
-        quicksort(list,leftIndex,i-1,comparator);
-        quicksort(list,i+1,righIndex,comparator);
-
-    }
-
-    public static void highscorequicksort(ArrayList<Highscores> list) {
-        Comparator<Highscores> comp = new ScoreComperator();
-        quicksort(list, 0, list.size() - 1, comp);
-
-
-    }
+   }
 
 }
