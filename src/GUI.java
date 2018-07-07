@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 
 public class GUI implements ActionListener {
 
+    /*In dieser Klasse befinden sich die Oberfläche des Spiels
+    Die GUI wurde mit Java Swing erstellt
+    Diese Klasse wurde verfasst von Dennis Krahl, Louisa Spieckermann und Inga Müller
+     */
+
     private Gamemanager gamemanager;
 
     Images images = new Images ();
@@ -46,7 +51,7 @@ public class GUI implements ActionListener {
 
         frame = new JFrame();
         frame.setVisible(true);
-        frame.setTitle("Ein Etwas Anderews Rollenspiel");
+        frame.setTitle("Ein etwas anderes Rollenspiel");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(50, 50, 1000, 620);
 
@@ -54,15 +59,19 @@ public class GUI implements ActionListener {
         layeredPane.setVisible(true);
         frame.add(layeredPane);
 
-        hintergrund = new JLabel("hintergrund");
+        hintergrund = new JLabel();
         layeredPane.add(hintergrund);
         layeredPane.setLayer(hintergrund, 0);
         hintergrund.setOpaque(true);
-        //nur zu Testzwecken eingefärbt
-        hintergrund.setBackground(Color.ORANGE);
-        hintergrund.setBounds(0, 0, 1000, 600);
+        hintergrund.setBounds(200, 0, 800, 350);
         hintergrund.setIcon(new ImageIcon(images.hintergrundStartbild));
 
+
+        character = new JLabel();
+        layeredPane.add(character);
+        character.setVisible(true);
+        layeredPane.setLayer(character,1);
+        character.setBounds(0,0,200,350);
 
 
         textfeld = new JTextArea(10,60);
@@ -70,7 +79,7 @@ public class GUI implements ActionListener {
         textfeld.setFont(new Font("Verdana",Font.PLAIN,13));
         layeredPane.add(textfeld);
         layeredPane.setLayer(textfeld,2);
-        textfeld.setBounds(5, 300, 975, 180);
+        textfeld.setBounds(5, 350, 975, 180);
         textfeld.setEditable(false);
         textfeld.setLineWrap(true);
         textfeld.setWrapStyleWord(true);
@@ -81,37 +90,39 @@ public class GUI implements ActionListener {
         layeredPane.add(btnWeiter);
         layeredPane.setLayer(btnWeiter,3);
         btnWeiter.setVisible(true);
-        btnWeiter.setBounds(400, 495, 200, 50);
+        btnWeiter.setBounds(400, 520, 200, 40);
 
-        btn1 = new JButton("");
+        btn1 = new JButton();
         btn1.addActionListener(this);
         layeredPane.add(btn1);
-        layeredPane.setLayer(btn1,2);
+        layeredPane.setLayer(btn1,3);
         btn1.setVisible(false);
-        btn1.setBounds(30, 495, 200, 50);
+        btn1.setBounds(20, 520, 200, 40);
 
-        btn2 = new JButton("Faultier");
+
+        btn2 = new JButton();
         btn2.addActionListener(this);
         layeredPane.add(btn2);
-        layeredPane.setLayer(btn2,2);
+        layeredPane.setLayer(btn2,3);
         btn2.setVisible(false);
-        btn2.setBounds(270, 495, 200, 50);
+        btn2.setBounds(270, 520, 200, 40);
 
-        btn3 = new JButton("Mensch");
+        btn3 = new JButton();
         btn3.addActionListener(this);
         layeredPane.add(btn3);
-        layeredPane.setLayer(btn3,2);
+        layeredPane.setLayer(btn3,3);
         btn3.setVisible(false);
-        btn3.setBounds(510, 495, 200, 50);
+        btn3.setBounds(510, 520, 200, 40);
 
-        btn4 = new JButton("Antwort 4");
+        btn4 = new JButton();
         btn4.addActionListener(this);
         layeredPane.add(btn4);
-        layeredPane.setLayer(btn4,2);
+        layeredPane.setLayer(btn4,3);
         btn4.setVisible(false);
-        btn4.setBounds(750, 495, 200, 50);
+        btn4.setBounds(750, 520, 200, 40);
 
         gamemanager = p;
+
 
          gamemanager.setPlayername(JOptionPane.showInputDialog(frame,"Spielername","Wie heißt du?",JOptionPane.QUESTION_MESSAGE));
 
@@ -203,6 +214,7 @@ public class GUI implements ActionListener {
                 textfeld.setText(Text.CharakterFaultier);
                 btnWeiter.setText("Weiter");
                 changeButtonVisibility(false,false,false,false,true);
+                character.setIcon(new ImageIcon(images.CharakterFaultier));
 
             }
 
@@ -260,9 +272,9 @@ public class GUI implements ActionListener {
 
 
                 textfeld.setText(Text.CharakterMensch);
-                hintergrund.setIcon(new ImageIcon(images.CharakterHeld));
                 btnWeiter.setText("Weiter");
                 changeButtonVisibility(false,false,false,false,true);
+                character.setIcon(new ImageIcon(images.CharakterHeld));
 
             }
 

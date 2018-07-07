@@ -7,12 +7,14 @@ import java.net.URL;
 
 public class Images {
 
+    //In dieser Klasse werden die Bilddatein aus dem Resource geladen
+
     public static BufferedImage CharakterFaultier;
     public static BufferedImage CharakterHeld;
+    public static BufferedImage Charaktere;
     public static BufferedImage hintergrundStartbild;
     public static BufferedImage hintergrundWohnzimmer;
     public static BufferedImage PaketInhalt;
-    public static BufferedImage textfeldHintergrund;
     public static BufferedImage TuerBaelle;
     public static BufferedImage TuerGeist;
     public static BufferedImage TuerHuenchenPaket;
@@ -33,6 +35,12 @@ public class Images {
 
 
         try {
+            Charaktere = ImageIO.read(getClass().getResource("/resources/Charaktere.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
             CharakterFaultier = ImageIO.read(getClass().getResource("/resources/CharakterFaultier.png"));
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,11 +56,11 @@ public class Images {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
+       /* try {
             hintergrundWohnzimmer = ImageIO.read(getClass().getResource("/resources/hintergrundWohnzimmer.png"));
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         try {
             PaketInhalt = ImageIO.read(getClass().getResource("/resources/PaketInhalt.png"));
@@ -60,11 +68,6 @@ public class Images {
             e.printStackTrace();
         }
 
-        try {
-            textfeldHintergrund = ImageIO.read(getClass().getResource("/resources/textfeldHintergrund.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         try {
             TuerBaelle = ImageIO.read(getClass().getResource("/resources/TuerBaelle.png"));

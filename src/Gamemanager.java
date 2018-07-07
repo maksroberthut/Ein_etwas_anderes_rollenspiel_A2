@@ -9,7 +9,9 @@ import javax.swing.*;
 
 public class Gamemanager {
 
-    // Das ist unsere Klasse wo wir die ganze logic des Spiels haben
+    /*In dieser Klasse befindet sich der Ablauf des Spiels.
+     Diese Klasse wurde verfasst von Dennis Krahl, Louisa Spieckermann und Inga Müller.
+     */
 
     private int gamestate = 1;
     private int score = 0;
@@ -39,17 +41,19 @@ public class Gamemanager {
         gamestate = g;
     }
 
-    //Bei Buttonklick wird der Text geändert
-    //jeder Case ist eine Kapitel in der Story
+
+
     public String userInput(int Input) {
 
         scoremulti(Input);
         switch (gamestate) {
-            //Der Intro Text wird angezeigt
+            //Die jedes Case stellt ein Abschnitt des Spiels dar.
+            // Durch Drücken des Weiter-Buttons (btnWeiter) wird gamestate um 1 erhöht und es wird zum nachsten Case gesprungen
 
             case 1: gamestate++;
                 gui.changeButtonVisibility(false, true,true,false,false);
                 gui.changeButtonLable("","Faultier","Mensch","");
+                gui.hintergrund.setIcon(new ImageIcon(images.Charaktere));
                 return Text.Charakter;
 
             case 2:

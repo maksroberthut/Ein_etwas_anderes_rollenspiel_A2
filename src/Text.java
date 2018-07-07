@@ -1,7 +1,8 @@
 public class Text {
 
 
-     //In dieser Klasse ist die Story in form von Strings gespeichert
+     //In dieser Klasse sind die einzelnen Kapitel des Spiels in Form von Strings gespeichert.
+
 
      public static String Charakter = "Wähle deinen Charakter.";
 
